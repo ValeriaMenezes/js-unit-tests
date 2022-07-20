@@ -40,7 +40,7 @@ const calculator = (number1, number2) => {
     mult: number1 * number2,
     div: Math.floor(number1 / number2),
     sub: number1 - number2,
-  }
+  };
   return operations;
 };
 console.log(calculator(2, 2));
@@ -52,10 +52,12 @@ const arrayGenerator = (type, object) => {
 
   if (type === 'keys') {
     return keys;
-  } else if (type === 'values') {
+  } 
+  if (type === 'values') {
     return values;
-  } else if (type === 'entries') {
-    return entries
+  } 
+  if (type === 'entries') {
+    return entries;
   }
 };
 
