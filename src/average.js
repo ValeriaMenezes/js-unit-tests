@@ -11,6 +11,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// Referências: Arthur Debiasi me ajudou nessa.
 const average = (array) => {
   let sum = 0;
   let media = 0;

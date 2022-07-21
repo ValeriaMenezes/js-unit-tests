@@ -29,6 +29,8 @@ const productDetails = require('../src/productDetails');
 
 */
 
+// Referências: Camila Mandai e André Gross me ajudaram nessa.
+
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Teste se productDetails é uma função', () => {
     expect(typeof(productDetails)).toEqual('function');

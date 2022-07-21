@@ -40,6 +40,7 @@ Retorno:
   phrases: [ 'Not today', 'A girl has no name.' ]
 }
 */
+//Referências: Felipe Ritta me ajudou nessa
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Teste se a função, quando não recebe nenhum parâmetro, retorna undefined', () => {
@@ -77,8 +78,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     expect(getCharacter('valeria')).toEqual(undefined);
   })
 });
-
-
 
 // ESCREVA SEUS TESTES ABAIXO:
 // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
