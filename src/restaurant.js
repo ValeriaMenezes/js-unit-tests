@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+ /* eslint-disable max-len */
 
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante através do qual será possível
@@ -56,7 +56,7 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, recebendo um objeto como parâmetro, retorna esse objeto no seguinte formato: 
 //  { fetchMenu: () => objetoPassadoPorParametro }.
-//
+
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -93,6 +93,39 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// Referências: Elivelton Machado e Arthur Debiasi me ajudaram nesse requisito.
+
+// const addConsumption = (item, array) => {
+//   array.push(item);
+// };
+const createMenu = (object) => {
+  const objetoRetornado = {
+    fetchMenu: () => object,
+    consumption: [],
+    order: (item) => objetoRetornado.consumption.push(item),
+    pay: () => {
+     let sum = 0;
+     let foods = Object.keys(object.food);
+     let drinks = Object.keys(object.drink);
+     let arrCons = objetoRetornado.consumption;
+     for (const item of arrCons) {
+      if (foods.includes(item)) {
+      sum += object.foods[item];
+     }
+      if (drinks.includes(item)) {
+      sum += object.drinks[item];
+     }
+     return sum * 1.1;
+    }
+  },
+};
+  return objetoRetornado;
+};
+
+// const cardapio = createMenu();
+// cardapio.order('agua');
+// console.log(cardapio.consumption);
 
 module.exports = createMenu;
+
+// (item) {this.consumption.push(item)}
