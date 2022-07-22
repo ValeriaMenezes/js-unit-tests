@@ -36,13 +36,14 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof(productDetails)).toEqual('function');
   });
   it('Teste se o retorno da função é um array', () => {
-   expect(typeof(productDetails())).toEqual('object');
+   expect(Array.isArray((productDetails()))).toBeTruthy();
   });
   it('Teste se o array retornado pela função contém dois itens dentro', () => {
    expect(productDetails('Alcool gel', 'Máscara').length).toEqual(2);
   });
   it('Teste se os dois itens dentro do array retornado pela função são objetos', () => {
-    expect(Array.isArray(productDetails('Alcool gel', 'Máscara'))).toEqual(true);
+    expect(typeof productDetails('Alcool gel', 'Máscara')[0]).toEqual('object');
+    expect(typeof productDetails('Alcool gel', 'Máscara')[1]).toEqual('object');
   });
   it('Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si', () => {
     expect(productDetails('Alcool gel', 'Máscara')).not.toEqual();
