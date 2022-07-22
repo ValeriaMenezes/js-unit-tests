@@ -1,4 +1,4 @@
- /* eslint-disable max-len */
+/* eslint-disable max-len */
 
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante através do qual será possível
@@ -95,37 +95,53 @@
 
 // Referências: Elivelton Machado e Arthur Debiasi me ajudaram nesse requisito.
 
-// const addConsumption = (item, array) => {
-//   array.push(item);
-// };
 const createMenu = (object) => {
   const objetoRetornado = {
     fetchMenu: () => object,
     consumption: [],
     order: (item) => objetoRetornado.consumption.push(item),
     pay: () => {
-     let sum = 0;
-     let foods = Object.keys(object.food);
-     let drinks = Object.keys(object.drink);
-     let arrCons = objetoRetornado.consumption;
-     for (const item of arrCons) {
-      if (foods.includes(item)) {
-      sum += object.foods[item];
-     }
-      if (drinks.includes(item)) {
-      sum += object.drinks[item];
-     }
-     return sum * 1.1;
-    }
-  },
-};
+      let sum = 0;
+      let foods = objetoRetornado.fetchMenu().food;
+      let drinks = objetoRetornado.fetchMenu().drink;
+      console.log(foods);
+      let arrCons = objetoRetornado.consumption;
+      for (const item of arrCons) {
+        if (foods[item]) {
+          sum += foods[item];
+          // console.log([item]);
+        }
+        if (drinks[item]) {
+          sum += drinks[item];
+        }
+      }
+      return sum * 1.1;
+    },
+  };
   return objetoRetornado;
 };
+// console.log(createMenu(
+// { food: {'coxinha': 3.9, 'sopa': 9.9}, drink:
+// {'agua': 3.9, 'cerveja': 6.9} })
+// );
 
+const objetoRetornado = createMenu(
+  {
+    food: { coxinha: 3.9, sopa: 9.9 },
+    drink: { agua: 3.9, cerveja: 6.9 },
+  },
+);
+objetoRetornado.order('coxinha');
+objetoRetornado.order('agua');
+objetoRetornado.order('coxinha');
+console.log(objetoRetornado.pay());
 // const cardapio = createMenu();
 // cardapio.order('agua');
 // console.log(cardapio.consumption);
 
 module.exports = createMenu;
 
+// const addConsumption = (item, array) => {
+//   array.push(item);
+// };
 // (item) {this.consumption.push(item)}
