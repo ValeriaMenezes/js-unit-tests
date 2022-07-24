@@ -102,6 +102,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
     objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
-    expect(objetoRetornado.pay()).toBeCloseTo(11.7 * 1.1);
+    expect(objetoRetornado.pay()).toBeCloseTo(12.87);
   });
 });
