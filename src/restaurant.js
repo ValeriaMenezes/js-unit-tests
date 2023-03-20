@@ -109,7 +109,6 @@ const createMenu = (object) => {
       for (const item of arrCons) {
         if (foods[item]) {
           sum += foods[item];
-          // console.log([item]);
         }
         if (drinks[item]) {
           sum += drinks[item];
@@ -120,10 +119,6 @@ const createMenu = (object) => {
   };
   return objetoRetornado;
 };
-// console.log(createMenu(
-// { food: {'coxinha': 3.9, 'sopa': 9.9}, drink:
-// {'agua': 3.9, 'cerveja': 6.9} })
-// );
 
 const objetoRetornado = createMenu(
   {
@@ -134,14 +129,5 @@ const objetoRetornado = createMenu(
 objetoRetornado.order('coxinha');
 objetoRetornado.order('agua');
 objetoRetornado.order('coxinha');
-console.log(objetoRetornado.pay());
-// const cardapio = createMenu();
-// cardapio.order('agua');
-// console.log(cardapio.consumption);
 
 module.exports = createMenu;
-
-// const addConsumption = (item, array) => {
-//   array.push(item);
-// };
-// (item) {this.consumption.push(item)}

@@ -40,7 +40,15 @@ Retorno:
   phrases: [ 'Not today', 'A girl has no name.' ]
 }
 */
-//Referências: Felipe Ritta me ajudou nessa
+//Referências: Felipe Ritta me ajudou nesse requisito
+
+// ESCREVA SEUS TESTES ABAIXO:
+// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+// Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+// Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+// Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+// Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
+// Teste se ao passar um nome que não está na tabela, a função retorna undefined.
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Teste se a função, quando não recebe nenhum parâmetro, retorna undefined', () => {
@@ -78,11 +86,3 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     expect(getCharacter('valeria')).toEqual(undefined);
   })
 });
-
-// ESCREVA SEUS TESTES ABAIXO:
-// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-// Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-// Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-// Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-// Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
-// Teste se ao passar um nome que não está na tabela, a função retorna undefined.
